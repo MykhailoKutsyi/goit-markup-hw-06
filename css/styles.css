@@ -687,6 +687,11 @@ body {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
+.modal-icon-close:focus,
+.modal-button-close:hover {
+  fill: var(--accent-color);
+}
+
 .form {
   padding: 40px;
 }
@@ -719,14 +724,31 @@ body {
   letter-spacing: 0.01em;
 }
 
-.form-field input {
+.form-field input,
+.form-field textarea,
+.form-field input:focus,
+.form-field textarea:focus {
+  min-height: 40px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  padding-left: 42px;
+  outline: none;
 }
 
+/* «C3» При получении инпутом фокуса, его рамка и иконка меняют цвет */
+
 .form-field input:focus,
-.form-field input:hover {
+.form-field textarea:focus {
   border: 1px solid #2196f3;
+  cursor: pointer;
+  fill: var(--accent-color);
+}
+
+.form-field input:focus + svg,
+.form-field svg:focus {
+  cursor: pointer;
+  fill: var(--accent-color);
 }
 
 .form-field input::placeholder {
@@ -739,18 +761,32 @@ body {
 
 .form-field svg {
   position: absolute;
-  bottom: 0;
+  bottom: 11px;
+  margin-left: 12px;
 }
 
 .form-field .comment {
   padding: 12px 16px;
 }
+.policy-position {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
 
-.policy {
+.form-field .policy {
   display: flex;
   align-items: center;
-  /* outline: 1px solid tomato; */
+  margin-bottom: 0;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
   /* display: block; */
+}
+
+.link-policy {
+  text-decoration-line: underline;
+  color: #2196f3;
 }
 
 .checkbox {
@@ -774,6 +810,7 @@ body {
 
 .checkbox-icon {
   display: inline-block;
+  position: relative;
   margin-left: 12px;
   margin-right: 7px;
 
@@ -781,14 +818,41 @@ body {
   height: 15px;
   border: 2px solid #212121;
   border-radius: 4px;
-  /* background-color: tomato; */
+}
+
+/* «C5» Оформление «чекбокса» о принятии лицензионного соглашения сделано вручную, при помощи векторного изображения галочки из SVG-спрайта. */
+
+.svg-check-vector {
+  position: absolute;
+  right: -2px;
+  top: -2px;
 }
 
 .checkbox:checked + .checkbox-icon {
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
   background-color: var(--accent-color);
-
-  background-image: url(../images/checkbox-icon.svg);
-  background-size: contain;
+  /* position: absolute; */
+  /* background-image: url(../images/icon-check.svg); */
+  /* background-size: contain; */
   background-origin: border-box;
+}
+
+.submit-button {
+  margin-left: 125px;
+  padding: 0;
+
+  min-width: 200px;
+  min-height: 50px;
+
+  background: #188ce8;
+  border-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
 }
