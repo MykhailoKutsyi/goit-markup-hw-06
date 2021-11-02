@@ -632,6 +632,72 @@ body {
   fill: var(--primary-white-color);
 }
 
+/* «C1» Выполнено оформление элементов формы подписки на рассылку в футере. */
+
+.footer-form-title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.footer-form {
+  margin-left: 93px;
+}
+
+.footer-form-field {
+  display: flex;
+}
+
+.footer-form-field input {
+  min-width: 358px;
+  min-height: 50px;
+}
+
+.footer-form-field .email {
+  padding: 15px 16px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: #2f303a;
+}
+
+.footer-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+
+  min-width: 200px;
+  min-height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  border-color: #2196f3;
+  background: #2196f3;
+  border-radius: 4px;
+}
+
+.footer-submit-button:focus,
+.footer-submit-button:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button-svg {
+  margin-left: 10px;
+}
+
 /* Modal form */
 
 /* Modal window */
@@ -685,6 +751,7 @@ body {
   background: #ffffff;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon-close:focus,
@@ -715,7 +782,6 @@ body {
 }
 
 .form-field label {
-  /* position: relative; */
   margin-bottom: 4px;
 
   font-weight: 400;
@@ -725,15 +791,15 @@ body {
 }
 
 .form-field input,
-.form-field textarea,
-.form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea {
   min-height: 40px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
   outline: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* «C3» При получении инпутом фокуса, его рамка и иконка меняют цвет */
@@ -742,13 +808,13 @@ body {
 .form-field textarea:focus {
   border: 1px solid #2196f3;
   cursor: pointer;
-  fill: var(--accent-color);
 }
 
 .form-field input:focus + svg,
 .form-field svg:focus {
   cursor: pointer;
   fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field input::placeholder {
@@ -788,6 +854,8 @@ body {
   text-decoration-line: underline;
   color: #2196f3;
 }
+
+/* «C4» Оригинальный чекбокс о принятии лицензионного соглашения в форме заявки скрыт. */
 
 .checkbox {
   /* -webkit-appearance: none;
@@ -846,7 +914,6 @@ body {
 
   background: #188ce8;
   border-color: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
   font-weight: 700;
@@ -855,4 +922,11 @@ body {
   letter-spacing: 0.06em;
 
   color: #ffffff;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
