@@ -213,6 +213,7 @@ body {
   line-height: 1.87;
   letter-spacing: 0.06em;
   border-radius: 4px;
+  border: transparent;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -576,6 +577,14 @@ body {
   padding: 60px 0;
 }
 
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-container .position {
+  flex-grow: 1;
+}
 .footer-logo {
   color: var(--primary-white-color);
 
@@ -606,11 +615,6 @@ body {
   font-weight: 400;
   text-decoration: none;
   font-style: normal;
-}
-
-.footer-container {
-  display: flex;
-  align-items: baseline;
 }
 
 .footer-socials-form {
@@ -825,29 +829,35 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-field svg {
+.form-field .form-icon {
   position: absolute;
   bottom: 11px;
-  margin-left: 12px;
+  left: 12px;
 }
 
 .form-field .comment {
   padding: 12px 16px;
 }
+
+.comment-position {
+  margin-bottom: 20px;
+}
+
 .policy-position {
-  margin-top: 10px;
   margin-bottom: 30px;
 }
 
 .form-field .policy {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
+  justify-content: center;
+  margin: 0;
 
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  /* display: block; */
+
+  cursor: pointer;
 }
 
 .link-policy {
@@ -863,38 +873,44 @@ body {
   appearance: none;
   position: absolute; */
 
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
+  /* position: absolute; */
+  /* display: block; */
+  width: 0px;
+  /* height: 15px; */
+  /* height: 1px; */
+  /* margin: -3px; */
+  /* border: 0; */
+  /* padding: 0; */
 
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  /* white-space: nowrap; */
+  /* clip-path: inset(100%); */
+  /* clip: rect(0 0 0 0); */
+  /* overflow: hidden; */
 }
 
 .checkbox-icon {
-  display: inline-block;
   position: relative;
-  margin-left: 12px;
-  margin-right: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 16px;
   height: 15px;
+
+  margin-right: 7px;
+
   border: 2px solid #212121;
   border-radius: 4px;
 }
 
-/* «C5» Оформление «чекбокса» о принятии лицензионного соглашения сделано вручную, при помощи векторного изображения галочки из SVG-спрайта. */
-
-.svg-check-vector {
+.checkbox-icon svg {
   position: absolute;
-  right: -2px;
-  top: -2px;
+  /* width: 16px; */
+  /* height: 15px; */
 }
+
+/* «C5» Оформление «чекбокса» о принятии лицензионного соглашения сделано вручную, при помощи векторного изображения галочки из SVG-спрайта. */
 
 .checkbox:checked + .checkbox-icon {
   border-color: var(--accent-color);
@@ -906,7 +922,9 @@ body {
 }
 
 .submit-button {
-  margin-left: 125px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
 
   min-width: 200px;
